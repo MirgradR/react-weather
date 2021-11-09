@@ -1,0 +1,11 @@
+.content__weather-item {
+    display: flex;
+    margin-bottom: 15px;
+}
+.content__weather-item img {
+    width: 25px;
+    height: 25px;
+}
+.weather-item__title {
+    margin: 0 10px;
+}

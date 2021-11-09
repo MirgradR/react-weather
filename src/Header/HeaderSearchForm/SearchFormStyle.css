@@ -1,0 +1,21 @@
+.search-form__input {
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 8px 15px;
+    width: 260px;
+    margin-top: 18px;
+    z-index: 1;
+}
+.search-form__btn {
+    background-color: inherit;
+    border: none;
+    padding: 0;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+.search-form__btn img {
+    position: absolute;
+    top: -18px;
+    left: -30px;
+}

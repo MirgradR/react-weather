@@ -1,0 +1,27 @@
+.content > *:not(img){
+    padding: 0 15px;
+}
+.content__weather-img {
+    width: 180px;
+}
+.content__temperature {
+    font-size: 36px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .content__weather-img {
+        width: 140px;
+    }
+}
