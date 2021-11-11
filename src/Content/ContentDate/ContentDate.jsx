@@ -1,10 +1,12 @@
 
 
 const ContentDate = (props) => {
+    
+    const { day, dayOfWeek, monthOfYear, year, hours, minutes } = props.date
     return (
         <div className = {'content__date'}>
-            <h4 className = {'content__date-date'}>9th Nov 2021</h4>
-            <h4 className = {'content__date-week'}>Tuesday | 15:46</h4>
+            <h4 className = {'content__date-date'}>{day}th {monthOfYear} {year}</h4>
+            <h4 className = {'content__date-week'}>{dayOfWeek} | {hours}:{minutes}</h4>
         </div>
     )
 }

@@ -1,16 +1,15 @@
-import { createStore } from 'redux'
+import { applyMiddleware, createStore } from 'redux'
 import { combineReducers } from 'redux'
-import { searchReducer } from './redux/searchReducer'
+import thunk from 'redux-thunk'
+import { getDate } from './redux/dateReducer'
 import { weatherReducer } from './redux/weatherReducer'
 
 let reducers = combineReducers({
-    search: searchReducer,
-    weather: weatherReducer
+    weather: weatherReducer,
+    date: getDate
 })
 
-
-
-let store = createStore(reducers)
+let store = createStore(reducers, applyMiddleware(thunk))
 
 window.store = store
 

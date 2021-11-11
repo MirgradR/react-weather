@@ -1,22 +1,23 @@
-import {Field, Formik, Form, ErrorMessage} from 'formik'
-import { errorsForm, validate } from '../../extraForForm/extraForForms'
+import { errorsForm } from '../../extraForForm/extraForForms'
 import './SearchFormStyle.css'
 import searchIcon from '../../img/searchicon.png'
+import { useForm } from "react-hook-form"
 
 const HeaderSearchForm = (props) => {
-    const searchCity = (value) => {
-        console.log(value)
+    
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+
+    const searchCity = (value) => {   
+        props.getWeather(value.search)
+        reset()
     }
     return (
-       <Formik initialValues = {{ search: '' }} validateOnBlur validate = {validate} onSubmit = {(values) => searchCity(values)}>
-           {({values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, isSubmitting}) => (
-               <Form className = {'search-form'} onSubmit = {handleSubmit}>
-                  <Field className = {'search-form__input'} type = {'input'} name = {'search'} placeholder = {'Paris'} />  
-                  <button className = {'search-form__btn'} type = 'submit' disabled = {isSubmitting}><img src = {searchIcon} alt = {'Search'}/></button>
-                  <ErrorMessage name = {'search'} component = {errorsForm}/>
-               </Form>    
-           )}
-       </Formik>
+        <form className={'search-form'} onSubmit={handleSubmit(searchCity)}>
+            <input {...register("search", { required: true })} className={'search-form__input'} name={'search'} placeholder={'Paris'} />
+            <button className={'search-form__btn'} type='submit'><img src={searchIcon} alt={'Search'} /></button>
+            {errors.search && errorsForm('Choose a city')}  
+        </form>
     )
 }
+
 export default HeaderSearchForm

@@ -4,3 +4,9 @@
   padding: 0 10px;
   color: rgb(153, 52, 34);
 }
+.preloader {
+  font-size: 26px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}

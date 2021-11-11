@@ -1,14 +1,14 @@
 import { Provider } from 'react-redux';
 import './App.css';
-import Content from './Content/Content';
-import Header from './Header/Header';
+import ContentContainer from './Content/Content';
+import HeaderContainer from './Header/Header';
 import store from './redux-store';
 
 const App = (props) => {
   return (
     <div className={'weather-app'}>
-      <Header />
-      <Content />
+      <HeaderContainer />
+      <ContentContainer />
     </div>
   )
 }

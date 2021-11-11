@@ -1,8 +1,8 @@
 import './extraForForms.css'
 
-export const errorsForm = (props) => {
+export const errorsForm = (text) => {
     return (
-        <div className = {'error-form'}>{props.children}</div>
+        <div className = {'error-form'}>{text}</div>
     )
 }
 
