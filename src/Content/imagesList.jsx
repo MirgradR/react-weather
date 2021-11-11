@@ -30,6 +30,9 @@ const IconWeather = ({ icon }) => {
             img = objs[i]
         }  
     }
+    if (!icon) {
+        return <img src = {img01d} alt = 'icon' className = {'content__weather-img'}/>
+    }
     return (
         <img src = {img} alt = 'icon' className = {'content__weather-img'}/>
     )
