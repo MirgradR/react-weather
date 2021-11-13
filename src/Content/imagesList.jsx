@@ -18,23 +18,26 @@ import img50d from'./../img/weather/50d.png'
 import img50n from'./../img/weather/50n.png'
 
 const IconWeather = ({ icon }) => {
-    const imgList = [img01d, img01n, img02d, img02n, img03d, img03n, img04n, img04d, img09d, img09n, img10d, img10n, img11d, img11n, img13d, img13n, img50d, img50n]
-    const objs = {}
-    let img = null
-    for (let i in imgList) {
-        let key = imgList[i]
-        objs[key] = key
-    }
-    for (let i in objs) {
-        if (i.split('/')[3].split('.')[0] === icon) {
-            img = objs[i]
-        }  
-    }
+    
+    // const imgList = [img01d, img01n, img02d, img02n, img03d, img03n, img04n, img04d, img09d, img09n, img10d, img10n, img11d, img11n, img13d, img13n, img50d, img50n]
+    // const objs = {}
+    // let img = null
+    // for (let i in imgList) {
+    //     let key = imgList[i]
+    //     objs[key] = key
+    // }
+    // for (let i in objs) {
+    //     if (i.split('/')[3].split('.')[0] === icon) {
+    //         img = objs[i]
+    //     }  
+    // }${icon}
+    
+    // const imga = `/src/img/weather/50n.png`
     if (!icon) {
         return <img src = {img01d} alt = 'icon' className = {'content__weather-img'}/>
     }
     return (
-        <img src = {img} alt = 'icon' className = {'content__weather-img'}/>
+        <img src = {img09d} alt = 'icon' className = {'content__weather-img'}/>
     )
 }
 
